@@ -1,4 +1,4 @@
-import HelloWorld from 0xDeployer
+import HelloWorld from "../contracts/HelloWorld.cdc"
 
 pub fun main(): String {
   return HelloWorld.greeting
