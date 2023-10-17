@@ -1,7 +1,7 @@
 import flowJson from "../../../../flow.json";
 import { network } from "../config";
 
-function replaceWithProperValues(cadence: String) {
+function replaceWithProperImports(cadence: String) {
   let broken = cadence.split(/\s/g);
   for (let i = 0; i < broken.length; i++) {
     if (broken[i] == "import" && broken[i + 2] == "from") {
@@ -21,4 +21,4 @@ function replaceWithProperValues(cadence: String) {
   return cadence;
 }
 
-export default replaceWithProperValues;
+export default replaceWithProperImports;
