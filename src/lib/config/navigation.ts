@@ -1,11 +1,3 @@
-export const navElements = [
-	{
-		name: 'Home',
-		url: '/',
-		prefetch: true
-	}
-];
-
 export const emeraldTools = [
 	{
 		name: 'Emerald Academy',
