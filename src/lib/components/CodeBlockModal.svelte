@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button, Modal, getModal } from '@emerald-dao/component-library';
+	import { Button, CodeBlock, Modal, getModal } from '@emerald-dao/component-library';
 	import Icon from '@iconify/svelte';
 
 	export let codeBlock: string;
@@ -12,9 +12,6 @@
 	{`View ${codeBlockType}`}</Button
 >
 <Modal {id}>
-	<code>
-		<pre>
-			{`${codeBlock}`}
-		</pre>
-	</code>
+	<slot />
+	<CodeBlock code={`${codeBlock}`} lang="cadence" />
 </Modal>

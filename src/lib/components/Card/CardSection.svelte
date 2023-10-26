@@ -9,8 +9,8 @@
 		flex-direction: column;
 		gap: var(--space-3);
 
-		&:not(:first-child):not(:last-child) {
-			border-block: 1px solid var(--clr-border-primary);
+		&:not(:last-child) {
+			border-bottom: 1px solid var(--clr-border-primary);
 		}
 	}
 </style>

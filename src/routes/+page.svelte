@@ -1,10 +1,13 @@
 <script type="ts">
+	import GetGreetingCodeModal from './../lib/components/GetGreetingCodeModal.svelte';
 	import { Button } from '@emerald-dao/component-library';
-	import CodeBlockModal from '$lib/components/CodeBlockModal/CodeBlockModal.svelte';
+	import CodeBlockModal from '$lib/components/CodeBlockModal.svelte';
 	import * as Card from '$lib/components/Card';
 	import changeGreeting from '$lib/flow/actions/changeGreeting';
 	import getGreeting from '$lib/flow/actions/getGreeting';
 	import executeTransaction from '$lib/flow/utils/executeTransaction';
+	import GreetingWrapper from '$lib/components/GreetingWrapper.svelte';
+	import ChangeGreetingCodeModal from '$lib/components/ChangeGreetingCodeModal.svelte';
 
 	let newGreeting: string;
 	let greeting: string;
@@ -31,11 +34,7 @@
 		<textarea bind:value={newGreeting} placeholder="Insert your new greeting..." rows="3" />
 		<div class="row-2">
 			<Button size="small" on:click={handleChangeGreeting}>Change greeting</Button>
-			<CodeBlockModal
-				id="change-greeting-transaction"
-				codeBlock={`${changeGreeting}`}
-				codeBlockType="transaction"
-			/>
+			<ChangeGreetingCodeModal />
 		</div>
 	</Card.Section>
 	<Card.Section>
@@ -43,38 +42,8 @@
 		<span class="small">Run a script to read your greeting from the Flow Blockchain.</span>
 		<div class="row-2">
 			<Button size="small" on:click={handleGetGreeting}>Get greeting</Button>
-			<CodeBlockModal
-				id="get-greeting-transaction"
-				codeBlock={`${getGreeting}`}
-				codeBlockType="script"
-			/>
+			<GetGreetingCodeModal />
 		</div>
-		<div class="greeting-wrapper">
-			<span class="small w-medium">Current Greeting:</span>
-			{#if greeting}
-				<span class="small">{greeting}</span>
-			{:else}
-				<span class="small">No greeting yet</span>
-			{/if}
-		</div>
+		<GreetingWrapper {greeting} />
 	</Card.Section>
 </Card.Root>
-
-<style type="scss">
-	textarea {
-		border-radius: var(--radius-1);
-	}
-
-	.greeting-wrapper {
-		border: 1px solid var(--clr-primary-main);
-		background-color: var(--clr-primary-badge);
-		border-radius: var(--radius-1);
-		padding: var(--space-3);
-
-		span {
-			&:first-child {
-				color: var(--clr-primary-main);
-			}
-		}
-	}
-</style>
