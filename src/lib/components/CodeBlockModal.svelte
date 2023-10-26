@@ -17,26 +17,34 @@
 	<Icon icon="tabler:code" />
 	{`View ${codeBlockType}`}</Button
 >
-<div class="small">
-	<Modal {id}>
+<Modal {id} overflowVisible={false}>
+	<div class="modal-content">
 		<slot />
-		<div class="flex">
+		<div class="code-blocks-wrapper">
 			{#each codeBlocks as { code, lang, codeTitle }}
-				<CodeBlock {code} {lang} {codeTitle} />
+				<div>
+					<span class="small"><code>/{codeTitle}</code></span>
+					<CodeBlock {code} {lang} />
+				</div>
 			{/each}
 		</div>
-	</Modal>
-</div>
+	</div>
+</Modal>
 
 <style lang="scss">
-	.flex {
+	.modal-content {
+		max-width: 60vw;
+		max-height: 70vh;
 		display: flex;
-		justify-content: center;
-		gap: var(--space-5);
-	}
+		flex-direction: column;
+		padding: var(--space-3) var(--space-7);
 
-	.small {
-		max-width: 80vw;
-		overflow-x: scroll;
+		.code-blocks-wrapper {
+			padding: var(--space-4) var(--space-8);
+			overflow-x: hidden;
+			border: 1px solid var(--clr-border-primary);
+			border-radius: var(--radius-2) 0 0 var(--radius-2);
+			background-color: var(--clr-background-primary);
+		}
 	}
 </style>

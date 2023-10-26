@@ -19,7 +19,21 @@
 
 <CodeBlockModal id="change-greeting-transaction" {codeBlocks} codeBlockType="transaction">
 	<div class="column-2">
-		<span><strong>changeGreeting</strong> transaction</span>
+		<h3><strong>changeGreeting</strong> transaction</h3>
 		<p class="small">This is the FCL code that runs a transaction to change our greeting.</p>
 	</div>
 </CodeBlockModal>
+
+<style lang="scss">
+	div {
+		padding-bottom: var(--space-6);
+		position: sticky;
+		top: 0;
+		background-color: var(--clr-surface-secondary);
+		z-index: 1;
+
+		h3 {
+			font-size: var(--font-size-3);
+		}
+	}
+</style>

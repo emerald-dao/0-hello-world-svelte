@@ -19,7 +19,21 @@
 
 <CodeBlockModal id="get-greeting-transaction" {codeBlocks} codeBlockType="script">
 	<div class="column-2">
-		<span><strong>getGreeting</strong> script</span>
+		<h3 class="large"><strong>getGreeting</strong> script</h3>
 		<p class="small">This is the FCL code that fetches the greeting from our contract.</p>
 	</div>
 </CodeBlockModal>
+
+<style lang="scss">
+	div {
+		padding-bottom: var(--space-6);
+		position: sticky;
+		top: 0;
+		background-color: var(--clr-surface-secondary);
+		z-index: 1;
+
+		h3 {
+			font-size: var(--font-size-3);
+		}
+	}
+</style>
