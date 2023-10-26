@@ -35,5 +35,10 @@ export const socialMedia = [
 		name: 'Github ',
 		url: 'https://github.com/emerald-dao',
 		icon: 'ion:logo-github'
+	},
+	{
+		name: 'Discord',
+		url: 'https://discord.gg/emeraldcity',
+		icon: 'ion:logo-discord'
 	}
 ];

@@ -2,7 +2,13 @@
 	import { Button, CodeBlock, Modal, getModal } from '@emerald-dao/component-library';
 	import Icon from '@iconify/svelte';
 
-	export let codeBlock: string;
+	interface CodeBlockDetails {
+		codeTitle: string;
+		code: string;
+		lang: string;
+	}
+
+	export let codeBlocks: CodeBlockDetails[];
 	export let id: string;
 	export let codeBlockType: 'transaction' | 'script';
 </script>
@@ -11,7 +17,26 @@
 	<Icon icon="tabler:code" />
 	{`View ${codeBlockType}`}</Button
 >
-<Modal {id}>
-	<slot />
-	<CodeBlock code={`${codeBlock}`} lang="cadence" />
-</Modal>
+<div class="small">
+	<Modal {id}>
+		<slot />
+		<div class="flex">
+			{#each codeBlocks as { code, lang, codeTitle }}
+				<CodeBlock {code} {lang} {codeTitle} />
+			{/each}
+		</div>
+	</Modal>
+</div>
+
+<style lang="scss">
+	.flex {
+		display: flex;
+		justify-content: center;
+		gap: var(--space-5);
+	}
+
+	.small {
+		max-width: 80vw;
+		overflow-x: scroll;
+	}
+</style>

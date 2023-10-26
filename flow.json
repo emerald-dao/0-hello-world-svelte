@@ -1,81 +1,66 @@
 {
-	"networks": {
-		"emulator": "127.0.0.1:3569",
-		"mainnet": "access.mainnet.nodes.onflow.org:9000",
-		"testnet": "access.devnet.nodes.onflow.org:9000"
-	},
 	"contracts": {
+		"FIND": {
+			"source": "./src/flow/cadence/contracts/utility/FIND.cdc",
+			"aliases": {
+				"emulator": "f8d6e0586b0a20c7",
+				"mainnet": "1d7e57aa55817448",
+				"testnet": "631e88ae7f1d7c20"
+			}
+		},
 		"FlowToken": {
 			"source": "./src/flow/cadence/contracts/utility/FlowToken.cdc",
 			"aliases": {
-				"emulator": "0x0ae53cb6e3f42a79",
-				"testnet": "0x7e60df042a9c0868",
-				"mainnet": "0x1654653399040a61"
+				"emulator": "0ae53cb6e3f42a79",
+				"mainnet": "1654653399040a61",
+				"testnet": "7e60df042a9c0868"
 			}
 		},
 		"FungibleToken": {
 			"source": "./src/flow/cadence/contracts/utility/FungibleToken.cdc",
 			"aliases": {
-				"emulator": "0xee82856bf20e2aa6",
-				"testnet": "0x9a0766d93b6608b7",
-				"mainnet": "0xf233dcee88fe0abe"
-			}
-		},
-		"MetadataViews": {
-			"source": "./src/flow/cadence/contracts/utility/MetadataViews.cdc",
-			"aliases": {
-				"emulator": "0xf8d6e0586b0a20c7",
-				"testnet": "0x631e88ae7f1d7c20",
-				"mainnet": "0x1d7e57aa55817448"
-			}
-		},
-		"NonFungibleToken": {
-			"source": "./src/flow/cadence/contracts/utility/NonFungibleToken.cdc",
-			"aliases": {
-				"emulator": "0xf8d6e0586b0a20c7",
-				"testnet": "0x631e88ae7f1d7c20",
-				"mainnet": "0x1d7e57aa55817448"
-			}
-		},
-		"FIND": {
-			"source": "./src/flow/cadence/contracts/utility/FIND.cdc",
-			"aliases": {
-				"emulator": "0xf8d6e0586b0a20c7",
-				"testnet": "0x631e88ae7f1d7c20",
-				"mainnet": "0x1d7e57aa55817448"
+				"emulator": "ee82856bf20e2aa6",
+				"mainnet": "f233dcee88fe0abe",
+				"testnet": "9a0766d93b6608b7"
 			}
 		},
 		"HelloWorld": {
 			"source": "./src/lib/flow/cadence/contracts/HelloWorld.cdc",
 			"aliases": {
-				"emulator": "0xf8d6e0586b0a20c7"
+				"emulator": "f8d6e0586b0a20c7"
+			}
+		},
+		"MetadataViews": {
+			"source": "./src/flow/cadence/contracts/utility/MetadataViews.cdc",
+			"aliases": {
+				"emulator": "f8d6e0586b0a20c7",
+				"mainnet": "1d7e57aa55817448",
+				"testnet": "631e88ae7f1d7c20"
+			}
+		},
+		"NonFungibleToken": {
+			"source": "./src/flow/cadence/contracts/utility/NonFungibleToken.cdc",
+			"aliases": {
+				"emulator": "f8d6e0586b0a20c7",
+				"mainnet": "1d7e57aa55817448",
+				"testnet": "631e88ae7f1d7c20"
 			}
 		}
+	},
+	"networks": {
+		"emulator": "127.0.0.1:3569",
+		"mainnet": "access.mainnet.nodes.onflow.org:9000",
+		"testnet": "access.devnet.nodes.onflow.org:9000"
 	},
 	"accounts": {
 		"emulator-account": {
 			"address": "f8d6e0586b0a20c7",
 			"key": "fc49a771829ff480841164af13b18a68cd697b6e79c80af7f8470a9e651dfac5"
-		},
-		"testnet-account": {
-			"address": "0x7a05188f11e424c5",
-			"key": {
-				"type": "hex",
-				"index": 0,
-				"signatureAlgorithm": "ECDSA_P256",
-				"hashAlgorithm": "SHA3_256",
-				"privateKey": "60d844217eeeac729346dc6f841f07889b6c0f452b9d3c2b88c6eb6e1e0ec1cd"
-			}
 		}
 	},
 	"deployments": {
 		"emulator": {
 			"emulator-account": [
-				"HelloWorld"
-			]
-		},
-		"testnet": {
-			"testnet-account": [
 				"HelloWorld"
 			]
 		}

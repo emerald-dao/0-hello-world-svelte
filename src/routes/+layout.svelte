@@ -50,6 +50,7 @@
 	transactionInProgress={$transaction.progress}
 	{logIn}
 	{unauthenticate}
+	logoUrl="/ea-logo.png"
 	logoText="Hello World Quickstart"
 />
 <main>
@@ -60,7 +61,7 @@
 		<Blur left="10%" bottom="45%" />
 	</section>
 </main>
-<Footer {emeraldTools} socials={socialMedia} />
+<Footer {emeraldTools} socials={socialMedia} logoUrl="ea-logo.png" logoText="Emerald Academy" />
 
 <style lang="scss">
 	main {

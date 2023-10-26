@@ -1,17 +1,25 @@
 <script lang="ts">
-	import changeGreeting from '$lib/flow/actions/changeGreeting';
+	import changeGreeting from '$lib/flow/actions/changeGreeting?raw';
 	import CodeBlockModal from './CodeBlockModal.svelte';
+	import changeGreetingTx from '$lib/flow/cadence/transactions/changeGreeting.cdc?raw';
+
+	const codeBlocks = [
+		{
+			codeTitle: 'changeGreeting.ts',
+			code: `${changeGreeting}`,
+			lang: 'javascript'
+		},
+		{
+			codeTitle: 'changeGreeting.cdc',
+			code: `${changeGreetingTx}`,
+			lang: 'cadence'
+		}
+	];
 </script>
 
-<CodeBlockModal
-	id="change-greeting-transaction"
-	codeBlock={`${changeGreeting}`}
-	codeBlockType="transaction"
->
+<CodeBlockModal id="change-greeting-transaction" {codeBlocks} codeBlockType="transaction">
 	<div class="column-2">
 		<span><strong>changeGreeting</strong> transaction</span>
-		<p class="small">
-			This is a simple exmplanation of what this transaction does. Put any detail you want.
-		</p>
+		<p class="small">This is the FCL code that runs a transaction to change our greeting.</p>
 	</div>
 </CodeBlockModal>

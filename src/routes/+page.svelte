@@ -1,7 +1,6 @@
 <script type="ts">
 	import GetGreetingCodeModal from './../lib/components/GetGreetingCodeModal.svelte';
 	import { Button } from '@emerald-dao/component-library';
-	import CodeBlockModal from '$lib/components/CodeBlockModal.svelte';
 	import * as Card from '$lib/components/Card';
 	import changeGreeting from '$lib/flow/actions/changeGreeting';
 	import getGreeting from '$lib/flow/actions/getGreeting';

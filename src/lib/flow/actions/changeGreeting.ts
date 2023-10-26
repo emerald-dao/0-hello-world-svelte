@@ -1,14 +1,14 @@
-import * as fcl from '@onflow/fcl';
-import changeGreetingTx from '../cadence/transactions/change_greeting.cdc?raw';
+import { mutate, authz } from '@onflow/fcl';
 import replaceWithProperImports from '../utils/replaceWithProperImports';
+import changeGreetingTx from '../cadence/transactions/changeGreeting.cdc?raw';
 
 async function changeGreeting(newGreeting: string) {
-	const transactionId = await fcl.mutate({
+	const transactionId = await mutate({
 		cadence: replaceWithProperImports(changeGreetingTx),
 		args: (arg, t) => [arg(newGreeting, t.String)],
-		proposer: fcl.authz,
-		payer: fcl.authz,
-		authorizations: [fcl.authz],
+		proposer: authz,
+		payer: authz,
+		authorizations: [authz],
 		limit: 999
 	});
 

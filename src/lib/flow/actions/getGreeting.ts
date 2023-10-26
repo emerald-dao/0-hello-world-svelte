@@ -1,9 +1,9 @@
-import * as fcl from '@onflow/fcl';
-import getGreetingScript from '../cadence/scripts/get_greeting.cdc?raw';
+import { query } from '@onflow/fcl';
 import replaceWithProperImports from '../utils/replaceWithProperImports';
+import getGreetingScript from '../cadence/scripts/getGreeting.cdc?raw';
 
 async function getGreeting() {
-	const result = await fcl.query({
+	const result = await query({
 		cadence: replaceWithProperImports(getGreetingScript),
 		args: (arg, t) => []
 	});
