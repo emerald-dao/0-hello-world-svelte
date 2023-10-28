@@ -41,6 +41,8 @@
 <TransactionModal
 	transactionInProgress={$transaction.progress}
 	transactionStatus={$transaction.transaction}
+	transactionId={$transaction.transactionId}
+	{network}
 	on:close={() => transaction.resetTransaction()}
 />
 <Header

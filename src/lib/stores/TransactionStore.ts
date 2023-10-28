@@ -9,27 +9,31 @@ import { writable } from 'svelte/store';
 function createTransactionStore(transaction: TransactionStatusObject) {
 	const { subscribe, set } = writable({
 		progress: false,
-		transaction: transaction
+		transaction: transaction,
+		transactionId: ''
 	});
 
 	function initTransaction() {
 		set({
 			progress: true,
-			transaction: transaction
+			transaction: transaction,
+			transactionId: ''
 		});
 	}
 
-	function subscribeTransaction(transaction: TransactionStatusObject) {
+	function subscribeTransaction(transaction: TransactionStatusObject, transactionId: string) {
 		set({
 			progress: true,
-			transaction: transaction
+			transaction: transaction,
+			transactionId
 		});
 	}
 
 	function resetTransaction() {
 		set({
 			progress: false,
-			transaction: transaction
+			transaction: transaction,
+			transactionId: ''
 		});
 	}
 
