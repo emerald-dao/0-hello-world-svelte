@@ -53,7 +53,7 @@
 	{logIn}
 	{unauthenticate}
 	logoUrl="/ea-logo.png"
-	logoText="Hello World Quickstart"
+	logoText="Emerald Academy"
 />
 <main>
 	<section class="container-small">
