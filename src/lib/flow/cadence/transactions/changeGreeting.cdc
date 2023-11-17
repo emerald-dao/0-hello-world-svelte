@@ -1,4 +1,4 @@
-import HelloWorld from "../contracts/HelloWorld.cdc"
+import "HelloWorld"
 
 transaction(newGreeting: String) {
   prepare(signer: AuthAccount) {
